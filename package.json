@@ -2,21 +2,46 @@
   "name": "e-commerce-store",
   "version": "0.1.0",
   "private": true,
+  "description": "Full-stack MERN e-commerce application",
+  "main": "index.js",
+  "keywords": [
+    "mern",
+    "ecommerce",
+    "react",
+    "nodejs",
+    "mongodb",
+    "express"
+  ],
+  "author": "Muhammad Atif",
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.2.0",
+    "@mui/material": "^7.2.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.526.0",
+    "mongodb": "^6.18.0",
+    "mongoose": "^8.16.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^7.7.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "react-scripts start",
+    "server": "cd src/backend && npm start",
+    "build": "cd src/frontend && npm run build",
+    "test": "echo \"No test specified\" && exit 0",
+    "seed": "node src/scripts/seed-products.js"
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +60,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.0",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
   }
 }
